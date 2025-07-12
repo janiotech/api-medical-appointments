@@ -49,7 +49,10 @@ cd api-medical-appointments
 
 ### 3. Configurar o banco de dados
 
-Crie um banco chamado medical_db no PostgreSQL: CREATE DATABASE medical_db;
+Crie um banco chamado medical_db no PostgreSQL:
+```sql
+CREATE DATABASE medical_db;
+```
 
 Configure as credenciais em src/main/resources/application.yml:
 ```yaml
