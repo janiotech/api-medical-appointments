@@ -47,7 +47,7 @@ git clone https://github.com/janiotech/api-medical-appointments.git
 cd api-medical-appointments
 ```
 
-3. Configurar o banco de dados
+### 3. Configurar o banco de dados
 
 Crie um banco chamado medical_db no PostgreSQL: CREATE DATABASE medical_db;
 
@@ -60,7 +60,7 @@ spring:
     password: sua_senha
 ```
 
-4. Executar a aplicação
+### 4. Executar a aplicação
 ```bash
 ./gradlew bootRun
 ```
