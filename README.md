@@ -31,6 +31,13 @@ Sistema de agendamento médico desenvolvido como parte de um desafio técnico. P
 
 ---
 
+## 🧱 Clean Architecture
+
+├── domain/              # Entidades, interfaces e regras de negócio puras
+├── application/         # Casos de uso
+├── infrastructure/      # Adaptadores de framework (Spring, DB, REST)
+
+
 ## ⚙️ Como Rodar o Projeto Localmente
 
 ### 1. Pré-requisitos
