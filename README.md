@@ -71,7 +71,7 @@ PGADMIN_DEFAULT_PASSWORD=admin
 PGADMIN_PORT=5050
 ```
 
-### 5. Build & Executar a aplicação com docker
+### 5. Buildar & Executar a aplicação com docker
 
 Para executar a aplicação com as variáveis de ambiente abra seu terminal na raiz do projeto e execute:
 ```bash
