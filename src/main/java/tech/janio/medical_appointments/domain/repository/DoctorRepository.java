@@ -1,4 +1,4 @@
-package tech.janio.medical_appointments.domain.repositories;
+package tech.janio.medical_appointments.domain.repository;
 
 import tech.janio.medical_appointments.domain.model.Doctor;
 
