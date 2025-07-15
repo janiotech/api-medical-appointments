@@ -21,7 +21,8 @@ public class DoctorEntity {
     @JoinColumn(name = "doctor_id")
     private List<AvailableSlotEntity> availableSlots = new ArrayList<>();
 
-    // Getters and setters
+    @Column(nullable = false)
+    private String specialty;
 
     public UUID getId() { return id; }
     public void setId(UUID id) { this.id = id; }
@@ -31,4 +32,6 @@ public class DoctorEntity {
 
     public List<AvailableSlotEntity> getAvailableSlots() { return availableSlots; }
     public void setAvailableSlots(List<AvailableSlotEntity> availableSlots) { this.availableSlots = availableSlots; }
+    public String getSpecialty() { return specialty; }
+    public void setSpecialty(String specialty) { this.specialty = specialty; }
 }
