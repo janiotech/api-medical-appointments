@@ -9,12 +9,13 @@ public class Doctor {
     private UUID id;
     private User user;
     private String specialty;
-    private List<AvailableSlot> availableSlots = new ArrayList<>();
+    private List<AvailableSlot> availableSlots;
 
-    public Doctor(User user, String specialty) {
+    public Doctor(User user, String specialty, List<AvailableSlot> availableSlots) {
         this.id = UUID.randomUUID();
         this.user = user;
         this.specialty = specialty;
+        this.availableSlots = availableSlots;
     }
 
     public UUID getId() { return id; }
