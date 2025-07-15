@@ -1,8 +1,6 @@
-package tech.janio.medical_appointments.infrastructure.repository.doctor;
+package tech.janio.medical_appointments.infrastructure.entity;
 
 import jakarta.persistence.*;
-import tech.janio.medical_appointments.infrastructure.entity.AvailableSlotEntity;
-import tech.janio.medical_appointments.infrastructure.entity.UserEntity;
 
 import java.util.ArrayList;
 import java.util.List;
