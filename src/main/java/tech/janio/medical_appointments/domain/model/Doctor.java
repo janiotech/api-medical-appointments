@@ -11,11 +11,10 @@ public class Doctor {
     private String specialty;
     private List<AvailableSlot> availableSlots;
 
-    public Doctor(User user, String specialty, List<AvailableSlot> availableSlots) {
+    public Doctor(User user, String specialty) {
         this.id = UUID.randomUUID();
         this.user = user;
         this.specialty = specialty;
-        this.availableSlots = availableSlots;
     }
 
     public UUID getId() { return id; }
