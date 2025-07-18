@@ -24,6 +24,13 @@ public class DoctorEntity {
     @Column(nullable = false)
     private String specialty;
 
+    public DoctorEntity(UUID id, UserEntity userEntity, String specialty) {
+    }
+
+    public DoctorEntity() {
+        
+    }
+
     public UUID getId() { return id; }
     public void setId(UUID id) { this.id = id; }
 
