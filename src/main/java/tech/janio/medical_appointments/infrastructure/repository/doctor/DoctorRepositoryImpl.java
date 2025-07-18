@@ -82,6 +82,6 @@ public class DoctorRepositoryImpl implements DoctorRepository {
                 new AvailableSlot(slot.getDateTime())
         ).collect(Collectors.toList());
 
-        return new Doctor(user, entity.getSpecialty(), slots);
+        return new Doctor(user, entity.getSpecialty());
     }
 }
