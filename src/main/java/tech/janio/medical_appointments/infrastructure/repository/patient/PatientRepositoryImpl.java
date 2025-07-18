@@ -6,7 +6,6 @@ import tech.janio.medical_appointments.domain.model.User;
 import tech.janio.medical_appointments.domain.repository.PatientRepository;
 import tech.janio.medical_appointments.infrastructure.entity.PatientEntity;
 import tech.janio.medical_appointments.infrastructure.entity.UserEntity;
-import tech.janio.medical_appointments.infrastructure.repository.patient.PatientJpaRepository;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -53,15 +52,12 @@ public class PatientRepositoryImpl implements PatientRepository {
 
     private Patient toDomain(PatientEntity entity) {
         User user = new User(
-                entity.getUser().getId(),
                 entity.getUser().getName(),
                 entity.getUser().getEmail(),
                 entity.getUser().getPassword(),
-                entity.getUser().getRoles(),
-                entity.getUser().getCreatedAt(),
-                entity.getUser().getUpdatedAt()
+                entity.getUser().getRoles()
         );
 
-        return new Patient(entity.getId(), user);
+        return new Patient(user);
     }
 }
