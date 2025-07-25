@@ -1,6 +1,7 @@
 package tech.janio.medical_appointments.domain.model;
 
 import tech.janio.medical_appointments.domain.enums.RoleEnum;
+import tech.janio.medical_appointments.domain.exception.DomainException;
 
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
@@ -17,12 +18,12 @@ public class User {
     private OffsetDateTime createdAt;
     private OffsetDateTime updatedAt;
 
-    public User(String name, String email, String passwordHash, Set<RoleEnum> roles) {
+    public User(String name, String email, String passwordHash) {
         this.id = UUID.randomUUID();
         this.name = name;
-        this.email = email;
+        this.email = validateEmail(email);
         this.passwordHash = passwordHash;
-        this.roles = roles;
+        this.roles = Set.of(RoleEnum.USER);
         this.createdAt = OffsetDateTime.now(ZoneOffset.UTC);
         this.updatedAt = OffsetDateTime.now(ZoneOffset.UTC);
     }
@@ -31,7 +32,7 @@ public class User {
                 OffsetDateTime createdAt, OffsetDateTime updatedAt) {
         this.id = id;
         this.name = name;
-        this.email = email;
+        this.email = validateEmail(email);
         this.passwordHash = passwordHash;
         this.roles = roles;
         this.createdAt = createdAt;
@@ -48,5 +49,12 @@ public class User {
 
     public void updateTimestamps() {
         this.updatedAt = OffsetDateTime.now(ZoneOffset.UTC);
+    }
+
+    private String validateEmail(String email) {
+        if (email == null || (!email.endsWith("@gmail.com") && !email.endsWith("@hotmail.com"))) {
+            throw new DomainException("invalid_email","Invalid email format. Only Gmail and Hotmail are allowed.");
+        }
+        return email;
     }
 }
