@@ -1,22 +1,15 @@
 package tech.janio.medical_appointments.infrastructure.repository.user;
 
 import org.springframework.stereotype.Repository;
-import tech.janio.medical_appointments.domain.enums.Role;
 import tech.janio.medical_appointments.domain.model.User;
 import tech.janio.medical_appointments.domain.repository.UserRepository;
 import tech.janio.medical_appointments.infrastructure.entity.UserEntity;
-
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Set;
-import java.util.UUID;
-import java.util.stream.Collectors;
+import java.util.*;
 
 @Repository
 public class UserRepositoryImpl implements UserRepository {
 
     private final UserJpaRepository jpaRepository;
-
     public UserRepositoryImpl(UserJpaRepository jpaRepository) {
         this.jpaRepository = jpaRepository;
     }
@@ -55,22 +48,14 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     private User toDomain(UserEntity entity) {
-        Set<Role> roles = entity.getRoles().stream()
-                .map(role -> {
-                    try {
-                        return Role.valueOf(String.valueOf(role));
-                    } catch (IllegalArgumentException e) {
-                        return null;
-                    }
-                })
-                .filter(Objects::nonNull)
-                .collect(Collectors.toSet());
-
         return new User(
-                entity.getName(),
-                entity.getEmail(),
-                entity.getPassword(),
-                roles
+                entity.getId(),
+            entity.getName(),
+            entity.getEmail(),
+            entity.getPassword(),
+            entity.getRoles(),
+            entity.getCreatedAt(),
+            entity.getUpdatedAt()
         );
     }
 }
