@@ -9,10 +9,9 @@ public class CreateUserRequest {
     private String name;
     private String email;
     private String passwordHash;
-    private Set<RoleEnum> role;
 
     public User toDomain() {
-        return new User(name, email, passwordHash, role);
+        return new User(name, email, passwordHash);
     }
 
     // Getters e Setters
@@ -24,6 +23,4 @@ public class CreateUserRequest {
 
     public void setPasswordHash(String passwordHash) { this.passwordHash = passwordHash; }
 
-    public Set<RoleEnum> getRole() { return role; }
-    public void setRole(Set<RoleEnum> role) { this.role = role; }
 }
