@@ -1,7 +1,7 @@
 package tech.janio.medical_appointments.domain.model;
 
 import tech.janio.medical_appointments.domain.enums.RoleEnum;
-import tech.janio.medical_appointments.domain.exception.DomainException;
+import tech.janio.medical_appointments.domain.exceptions.DomainException;
 
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
