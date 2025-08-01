@@ -1,4 +1,4 @@
-package tech.janio.medical_appointments.infrastructure.dto;
+package tech.janio.medical_appointments.application.dto.user;
 
 import tech.janio.medical_appointments.domain.enums.RoleEnum;
 import tech.janio.medical_appointments.domain.model.User;
@@ -26,7 +26,6 @@ public class UserResponse {
         return response;
     }
 
-    // Getters e Setters
     public UUID getId() { return id; }
     public void setId(UUID id) { this.id = id; }
 

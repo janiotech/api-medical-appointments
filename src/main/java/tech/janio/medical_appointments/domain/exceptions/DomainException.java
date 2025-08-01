@@ -1,4 +1,4 @@
-package tech.janio.medical_appointments.domain.exception;
+package tech.janio.medical_appointments.domain.exceptions;
 
 public class DomainException extends RuntimeException {
     private final String code;

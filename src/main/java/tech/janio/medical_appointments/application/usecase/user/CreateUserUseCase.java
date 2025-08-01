@@ -1,4 +1,4 @@
-package tech.janio.medical_appointments.application.usecase;
+package tech.janio.medical_appointments.application.usecase.user;
 
 import tech.janio.medical_appointments.domain.model.User;
 import tech.janio.medical_appointments.domain.repository.UserRepository;

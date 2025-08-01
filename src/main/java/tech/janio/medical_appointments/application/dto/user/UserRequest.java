@@ -1,11 +1,8 @@
-package tech.janio.medical_appointments.infrastructure.dto;
+package tech.janio.medical_appointments.application.dto.user;
 
-import tech.janio.medical_appointments.domain.enums.RoleEnum;
 import tech.janio.medical_appointments.domain.model.User;
 
-import java.util.Set;
-
-public class CreateUserRequest {
+public class UserRequest {
     private String name;
     private String email;
     private String passwordHash;
@@ -14,7 +11,6 @@ public class CreateUserRequest {
         return new User(name, email, passwordHash);
     }
 
-    // Getters e Setters
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
