@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import tech.janio.medical_appointments.domain.exception.DomainException;
+import tech.janio.medical_appointments.domain.exceptions.DomainException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
