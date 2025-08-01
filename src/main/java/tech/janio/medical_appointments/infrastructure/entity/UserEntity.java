@@ -3,7 +3,6 @@ package tech.janio.medical_appointments.infrastructure.entity;
 
 import jakarta.persistence.*;
 import java.time.OffsetDateTime;
-import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
