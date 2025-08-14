@@ -23,6 +23,13 @@ public class GlobalExceptionHandler {
                 .body(new ErrorResponse("duplicate_user", "A user with this email already exists."));
     }
 
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorResponse> handleUnexpected(Exception ex) {
+        return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(new ErrorResponse("500", "internal server error"));
+    }
+
     public static class ErrorResponse {
         public String code;
         public String message;
