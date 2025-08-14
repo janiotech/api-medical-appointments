@@ -1,5 +1,6 @@
 package tech.janio.medical_appointments.application.usecase.user;
 
+import tech.janio.medical_appointments.domain.exceptions.DomainException;
 import tech.janio.medical_appointments.domain.model.User;
 import tech.janio.medical_appointments.domain.repository.UserRepository;
 
@@ -13,6 +14,10 @@ public class GetUserUseCase {
     }
 
     public User execute(UUID userId){
-        return this.userRepository.findById(userId).orElseThrow(IllegalArgumentException::new);
+        User user = this.userRepository.findById(userId).orElse(null);
+        if(user == null) {
+            throw new DomainException("404" ,"User not found");
+        }
+        return user;
     }
 }
