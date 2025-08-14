@@ -38,9 +38,6 @@ public class UserController {
     @GetMapping("/{id}")
     public ResponseEntity<UserResponse> getUser(@PathVariable UUID id) {
         User user = getUserUseCase.execute(id);
-        if (user == null) {
-            return ResponseEntity.notFound().build();
-        }
         UserResponse response = UserResponse.fromDomain(user);
         return ResponseEntity.ok(response);
     }

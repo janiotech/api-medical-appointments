@@ -5,10 +5,10 @@ import tech.janio.medical_appointments.domain.model.User;
 public class UserRequest {
     private String name;
     private String email;
-    private String passwordHash;
+    private String password;
 
     public User toDomain() {
-        return new User(name, email, passwordHash);
+        return new User(name, email, password);
     }
 
     public String getName() { return name; }
@@ -17,6 +17,6 @@ public class UserRequest {
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 
-    public void setPasswordHash(String passwordHash) { this.passwordHash = passwordHash; }
+    public void setPassword(String password) { this.password = password; }
 
 }
