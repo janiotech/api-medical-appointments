@@ -21,11 +21,11 @@ public class GlobalExceptionHandler {
                 .body(new ErrorResponse(ex.getCode(), ex.getMessage()));
     }
 
-    @ExceptionHandler(DataIntegrityViolationException.class)
-    public ResponseEntity<ErrorResponse> handleDuplicateKey(DataIntegrityViolationException ex) {
-        return ResponseEntity.status(HttpStatus.CONFLICT) // HTTP 409
-                .body(new ErrorResponse(409, "A user with this email already exists."));
-    }
+//    @ExceptionHandler(DataIntegrityViolationException.class)
+//    public ResponseEntity<ErrorResponse> handleDuplicateKey(DataIntegrityViolationException ex) {
+//        return ResponseEntity.status(HttpStatus.CONFLICT) // HTTP 409
+//                .body(new ErrorResponse(409, "A user with this email already exists."));
+//    }
 
     @ExceptionHandler(NoResourceFoundException.class)
     public ResponseEntity<ErrorResponse> handleNoResourceFound(NoResourceFoundException ex) {
