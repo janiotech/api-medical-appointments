@@ -24,28 +24,28 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<ErrorResponse> handleDuplicateKey(DataIntegrityViolationException ex) {
         return ResponseEntity.status(HttpStatus.CONFLICT) // HTTP 409
-                .body(new ErrorResponse("duplicate_user", "A user with this email already exists."));
+                .body(new ErrorResponse(409, "A user with this email already exists."));
     }
 
     @ExceptionHandler(NoResourceFoundException.class)
     public ResponseEntity<ErrorResponse> handleNoResourceFound(NoResourceFoundException ex) {
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
-                .body(new ErrorResponse("404", "route not found"));
+                .body(new ErrorResponse(404, "route not found"));
     }
 
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public ResponseEntity<ErrorResponse> handleTypeMismatch(MethodArgumentTypeMismatchException ex) {
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
-                .body(new ErrorResponse("400", "invalid parameter type"));
+                .body(new ErrorResponse(400, "invalid parameter type"));
     }
 
     public static class ErrorResponse {
-        public String code;
+        public Integer code;
         public String message;
 
-        public ErrorResponse(String code, String message) {
+        public ErrorResponse(Integer code, String message) {
             this.code = code;
             this.message = message;
         }
