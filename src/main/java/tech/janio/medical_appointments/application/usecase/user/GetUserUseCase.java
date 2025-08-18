@@ -16,7 +16,7 @@ public class GetUserUseCase {
     public User execute(UUID userId){
         User user = this.userRepository.findById(userId).orElse(null);
         if(user == null) {
-            throw new DomainException("404" ,"User not found");
+            throw new DomainException(404 ,"User not found");
         }
         return user;
     }
