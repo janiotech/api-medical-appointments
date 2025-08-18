@@ -53,7 +53,7 @@ public class User {
 
     private String validateEmail(String email) {
         if (email == null || (!email.endsWith("@gmail.com") && !email.endsWith("@hotmail.com"))) {
-            throw new DomainException("invalid_email","Invalid email format. Only Gmail and Hotmail are allowed.");
+            throw new DomainException(400,"Invalid email format. Only Gmail and Hotmail are allowed.");
         }
         return email;
     }
